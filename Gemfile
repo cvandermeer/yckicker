@@ -6,10 +6,12 @@ gem 'puma',     '~> 3.0'
 gem 'jbuilder', '~> 2.5'
 gem 'active_model_serializers', '~> 0.10.0'
 
-gem 'capistrano', '~> 3.4.0'
-gem 'capistrano-bundler', '~> 1.1.2'
-gem 'capistrano-rails', '~> 1.1.1'
-gem 'capistrano-rbenv', '~> 2.0'
+group :production do
+  gem 'capistrano', '~> 3.1.0'
+  gem 'capistrano-bundler', '~> 1.1.2'
+  gem 'capistrano-rails', '~> 1.1.1'
+  gem 'capistrano-rbenv'
+end
 
 group :development, :test do
   gem 'byebug', platform: :mri
