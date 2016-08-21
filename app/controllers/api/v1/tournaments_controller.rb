@@ -6,7 +6,6 @@ module Api
         params[:team_ids].split(',').combination(2).to_a.each do |team_a, team_b|
           tournament.matches.build(team_a: team_a, team_b: team_b)
         end
-        byebug
         if tournament.save
           redirect_to api_v1_tournament_path(tournament)
         end
